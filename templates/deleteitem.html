@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	</head>
+	<body>
+		<h1>Delete an Item</h1>
+		<!-- Displays all the items in the database, with codes for deletion-->
+			<p>Item(s) in database: {{num_items}}</p>
+			{% for item in items %}
+				<li>{{ item.code }}: {{ item.name }}</li>
+			{% endfor %}
+			<!-- Notifies if no items in database-->
+			{% if not has_items %}
+				<h2>No Items in Database</h2>
+			{% endif %}
+			<p>------------------------------</p>
+			<!-- Form to let user enter database items-->
+	        <form action="/deleteitem" method="post">
+               <p><b>Item Code to Delete: </b><br><input type="text" name="code"/></p>
+               <p><input type="submit" name="deleteitem" value="Delete Item" /></p>
+            </form>
+	</body>
+</html>

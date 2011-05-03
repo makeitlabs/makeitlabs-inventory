@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	</head>
+  <body>
+  <h1> Create a new item </h1>
+  <br>
+	<form action="/createitem" method="post">
+	  <!-- Option for photos, once I figure that out
+	  <p><b>Photo:         </b><br><input type="file" name="photo" /></p>-->
+	  <p><p>Editor: {{user_name}}
+	  <p><b>Item Code:     </b><br><input type="text" name="code" value={{item_code}}></p>
+	  <p><b>Item Name:     </b><br><input type="text" name="name" /></p>
+	  <p><b>Value (USD$):  </b><br><input type="text" name="value" /></p>
+	  <p><b>Owner:         </b><br><input type="text" name="owner" value="MakeIt Labs"/></p>
+	  <p><b>Ownership Type </b><br>
+		<select name="owned">
+		  <option>MakeIt Labs Owned</option>
+		  <option>Private - Leased</option>
+		  <option>Private - Not Leased</option>
+		</select>
+	  </p>
+	  <p><b>Usage Allowed   </b><br>
+		<select name="usage">
+		  <option>Use as you wish</option>
+		  <option>Ask owner before use</option>
+		  <option>Use only if you know what you're doing</option>
+		  <option>Use ultra carefully</option>
+		  <option>DO NOT TOUCH</option>
+		</select>
+	  </p>              
+	  <p><b>If broken?      </b><br>
+		<select name="broken">
+		  <option>Return to owner</option>
+		  <option>Repair yourself, if fail tell owner</option>
+		  <option>Repair, if fail, throw it away</option>
+		  <option>Destroyer rebuys, if no destroyer, notice owner</option>
+		</select>
+	  </p> 
+	  <p><b>If unwanted?      </b><br>
+		<select name="unwanted">
+		  <option>Return to owner</option>
+		  <option>Just throw away</option>
+		  <option>Store it forever</option>
+		</select>
+	  </p> 
+	  <p><input type="submit" name="additem" value="Add Item" /> <INPUT type="reset"></p>
+	</form>
+  </body>
+</html>

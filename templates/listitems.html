@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	</head>
+	<head>
+		<style type="text/css">
+		h1{font-family:"Arial", sans-serif;}
+		h3{font-family:"Arial", sans-serif;}
+
+		
+		</style>
+	</head>
+	<body>
+		<h1>Items List</h1>
+		<p>Item(s) in database: {{num_items}}</p>
+		<!-- Displays all the items in the database, with codes for deletion-->
+		{% if not has_items %}
+			<h2>No Items in Database</h2>
+		{% else %}
+		<table border="1">
+			<tr>
+				<th>Code</th>
+				<th>Item Name</th>
+				<th>Value</th>
+				<th>Owner</th>
+				<th>How is it Owned?</th>
+				<th>How is it Used?</th>
+				<th>If Broken?</th>
+				<th>If Unwanted?</th>
+				<th>Entered by</th>
+				<th>Time Entered (UTC)</th>
+			</tr>
+			{% for item in items %}
+			<tr>
+				<td>{{ item.code }}</td>
+				<td><a href="/{{ item.code }}"><b>{{ item.name }}</b><a></td>
+				<td>{{ item.value }}</td>
+				<td>{{ item.owner }}</td>
+				<td>{{ item.owned }}</td>
+				<td>{{ item.usage }}</td>
+				<td>{{ item.broken }}</td>
+				<td>{{ item.unwanted }}</td>
+				<td>{{ item.username }}</td>
+				<td>{{ item.timestamp }}</td>
+			</tr>
+			{% endfor %}
+			<!-- Notifies if no items in database-->
+		</table>
+		{% endif %}
+
+		<br>
+		<br>
+		<a href="/">Back to Home</a>
+	</body>
+</html>

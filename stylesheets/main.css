@@ -1,0 +1,21 @@
+body {
+	font-family:"Arial"; 
+	margin:50px 50px 50px 50px;
+}
+
+table, td {
+	border:1px solid grey; 
+	border-collapse:collapse;
+}
+
+th{
+	background-color:blue;
+	color:white;
+}
+		
+td {
+	height:30px;
+	text-align:right;  
+	vertical-align:bottom;  
+	padding:5px;
+}

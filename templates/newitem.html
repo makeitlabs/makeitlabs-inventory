@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	</head>
+  <body>
+	  <!-- Option for photos, once I figure that out
+	  <p><b>Photo:         </b><br><input type="file" name="photo" /></p>-->
+	  <p><b>Item Name:     </b>{{item_name}}</p>
+	  <p><b>Item Code:     </b>{{item_code}}</p>
+	  <p><b>Value (USD$):  </b>{{item_value}}</p>
+	  <p><b>Owner:         </b>{{item_owner}}</p>
+	  <p><b>Ownership Type:</b>{{item_owned}}</p>
+	  <p><b>Usage Allowed: </b>{{item_usage}}</p>         
+	  <p><b>If broken?     </b>{{item_broken}}</p> 
+	  <p><b>Entered by:    </b>{{item_username}}</p> 
+	  <p><b>Time Entered:  </b>{{item_timestamp}}</p> 
+	  <a href="/createitem">Create Another New Item</a>
+	  <a href="/">Back to Home</a>
+	  <br>
+	  <img src="http://qrcode.kaywa.com/img.php?s=6&d=http%3A%2F%2Finv.makeitlabs.com%2F{{item_code}}" alt="qrcode" />
+	  <p>QR code link: <a href="http://inv.makeitlabs.com/{{item_code}}">http://inv.makeitlabs.com/{{item_code}}</a></p>
+	  </body>
+</html>
